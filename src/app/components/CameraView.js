@@ -145,7 +145,18 @@ export default function CameraView() {
               </ul>
             </div>
           ) : (
+            <>
             <p>Initializing camera...</p>
+            <p>{hasCamera ? hasCamera : 'Camera not initialized'}</p>
+            {cameras.length > 1 && (
+              <button
+              onClick={switchCamera}
+              className="absolute top-4 right-4 bg-white/30 p-2 rounded-full"
+              >
+                Switch Camera
+              </button>
+            )}
+            </>
           )}
         </div>
       )}
