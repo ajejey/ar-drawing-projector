@@ -146,6 +146,7 @@ const ARScene = ({ referenceImage, opacity = 0.7 }) => {
   return null;
 };
 
+
 // components/Controls.js
 const Controls = ({ opacity, onOpacityChange, onReset }) => {
   return (
