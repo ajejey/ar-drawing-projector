@@ -21,35 +21,33 @@ export default function Home() {
   };
 
   return (
-    <div className="relative h-screen w-screen overflow-hidden bg-black">
-      <main className="h-full w-full">
-        <CameraView />
-        
-        {uploadedImage && (
-          <div 
-            className="absolute top-0 left-0 w-full h-full pointer-events-none"
-            style={{
-              opacity: imageTransform.opacity,
-              transform: `rotate(${imageTransform.rotation}deg)`
-            }}
-          >
-            <img 
-              src={uploadedImage} 
-              alt="Tracing Reference" 
-              className="w-full h-full object-contain"
-            />
-          </div>
-        )}
-        
-        <ImageUploader onImageUpload={handleImageUpload} />
-        
-        {uploadedImage && (
-          <TransformControls 
-            image={uploadedImage} 
-            onTransform={handleTransform} 
+    <div className="fixed inset-0 bg-black">
+      <CameraView />
+      
+      {uploadedImage && (
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            opacity: imageTransform.opacity,
+            transform: `rotate(${imageTransform.rotation}deg)`
+          }}
+        >
+          <img 
+            src={uploadedImage} 
+            alt="Tracing Reference" 
+            className="w-full h-full object-contain"
           />
-        )}
-      </main>
+        </div>
+      )}
+      
+      <ImageUploader onImageUpload={handleImageUpload} />
+      
+      {uploadedImage && (
+        <TransformControls 
+          image={uploadedImage} 
+          onTransform={handleTransform} 
+        />
+      )}
     </div>
   );
 }
