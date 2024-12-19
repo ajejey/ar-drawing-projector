@@ -176,7 +176,7 @@ export default function ReferencePointSelector({ onPointsSelected, videoRef }) {
       ) : (
         <button
           onClick={startSelection}
-          className="absolute bottom-24 left-1/2 -translate-x-1/2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium shadow-lg transition-colors"
+          className="absolute top-24 left-1/2 -translate-x-1/2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium shadow-lg transition-colors"
         >
           Set Reference Points
         </button>
